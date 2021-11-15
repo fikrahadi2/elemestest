@@ -12,12 +12,12 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"),
+   url(./fonts/Rubik-Regular.ttf) format("truetype")
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Rubik";
 }
 </style>
