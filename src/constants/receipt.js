@@ -1,0 +1,58 @@
+export const MENU = [
+  {
+    rank: 1,
+    type: "Pizza",
+    name: "Pizza Paperoni",
+    img_src: "@/assets/menu_pizza_paperoni.png",
+    rating: 4,
+  },
+  {
+    rank: 2,
+    type: "Pizza",
+    name: "Pizza Meat",
+    img_src: "@/assets/menu_pizza_meat.png",
+    rating: 3,
+  },
+  {
+    rank: 3,
+    type: "Kebab",
+    name: "Doner Kebab",
+    img_src: "@/assets/menu_doner_kebab.png",
+    rating: 5,
+  },
+  {
+    rank: 4,
+    type: "Salmon",
+    name: "Salmon Roll",
+    img_src: "@/assets/menu_salmon_roll.png",
+    rating: 4,
+  },
+  {
+    rank: 5,
+    type: "Cupcake",
+    name: "Cupcake Choco",
+    img_src: "@/assets/menu_cupcake_choco.png",
+    rating: 4,
+  },
+  {
+    rank: 6,
+    type: "Doughnut",
+    name: "Doughnut Milk",
+    img_src: "@/assets/menu_doughnut_milk.png",
+    rating: 5,
+  },
+  {
+    rank: 7,
+    type: "Doughnut",
+    name: "Doughnut Unicorn",
+    img_src: "@/assets/menu_doughnut_unicorn.png",
+    rating: 4,
+  },
+  {
+    rank: 8,
+    type: "Kebab",
+    name: "Kathi Kebab",
+    img_src: "@/assets/menu_kathi_kebab.png",
+    rating: 4,
+  },
+]
