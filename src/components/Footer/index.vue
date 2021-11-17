@@ -10,7 +10,9 @@
             Daerah Khusus Ibukota Jakarta 12950
           </p>
           <div :class="$style.media">
-            
+            <icon-base icon-name="mail" icon-color="#8BAC3E"><contact-mail /></icon-base>
+            <icon-base icon-name="phone" icon-color="#FFFFFF"><contact-phone /></icon-base>
+            <icon-base icon-name="instagram" icon-color="#8BAC3E"><contact-instagram /></icon-base>
           </div>
         </div>
         <div :class="$style.categories">
@@ -62,9 +64,18 @@
 
 <script>
 import { CATEGORY } from "@/constants/receipt.js"
+import IconBase from "@/components/IconBase"
+import ContactMail from '@/icons/vue/ContactMail.vue'
+import ContactPhone from '@/icons/vue/ContactPhone.vue'
+import ContactInstagram from '@/icons/vue/ContactInstagram.vue'
+
 export default {
   name: "Footer",
   components: {
+    IconBase,
+    ContactMail,
+    ContactPhone,
+    ContactInstagram
   },
   data() {
     return {
@@ -178,7 +189,7 @@ export default {
 @media (max-width: 768px) {
   .footer__container {
     .footer__content {
-      margin: 0;
+      margin: 0 0 100px 0;
       .upper__content {
         padding: 50px;
         .first {
