@@ -80,7 +80,7 @@ export default {
 }
 @media (max-width: 768px) {
   .trending__card__container {
-    width: 402px;
+    max-width: 402px;
     height: 292px;
     box-shadow: 0px 11px 39px rgba(0, 0, 0, 0.07);
     border-radius: 17px;

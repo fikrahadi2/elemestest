@@ -15,7 +15,7 @@
               </div>
               <HeaderCard 
                 :class="$style.card__group"
-                :items="items_menu[8]"
+                :items="all_menu[8]"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@
             </div>
             <HeaderCard 
               :class="$style.card__group"
-              :items="items_menu[8]"
+              :items="all_menu[8]"
             />
           </div>
         </div>
@@ -111,12 +111,16 @@ export default {
   },
   data() {
     return {
-      items_menu: MENU,
+      items_menu: MENU.slice(0,8),
+      all_menu: MENU,
       category: CATEGORY,
       items_category: []
     }
   },
   created() {
+    console.log(MENU)
+    console.log(this.items_menu)
+    console.log(this.all_menu)
     for(let i=0; i < this.category.length; i++){
       let counting = 0
       this.items_category.push({

@@ -10,9 +10,18 @@
             Daerah Khusus Ibukota Jakarta 12950
           </p>
           <div :class="$style.media">
-            <icon-base icon-name="mail" icon-color="#8BAC3E"><contact-mail /></icon-base>
-            <icon-base icon-name="phone" icon-color="#FFFFFF"><contact-phone /></icon-base>
-            <icon-base icon-name="instagram" icon-color="#8BAC3E"><contact-instagram /></icon-base>
+            <div :class="$style.mail">
+              <img :class="$style.mail__icon__default" src="@/assets/icons/mail_green.png" alt="mail">
+              <img :class="$style.mail__icon__hover" src="@/assets/icons/mail_white.png" alt="mail">
+            </div>
+            <div :class="$style.phone">
+              <img :class="$style.phone__icon__default" src="@/assets/icons/phone_green.png" alt="phone">
+              <img :class="$style.phone__icon__hover" src="@/assets/icons/phone_white.png" alt="phone">
+            </div>
+            <div :class="$style.instagram">
+              <img :class="$style.instagram__icon__default" src="@/assets/icons/instagram_green.png" alt="instagram">
+              <img :class="$style.instagram__icon__hover" src="@/assets/icons/instagram_white.png" alt="instagram">
+            </div>
           </div>
         </div>
         <div :class="$style.categories">
@@ -42,7 +51,10 @@
               Get now free 50% discount for all products on yout first order
             </p>
             <div :class="$style.get__discount">
-
+              <div :class="$style.input">
+                <input :class="$style.input__form" type="text" placeholder="Your email address">
+                <div id="send-email" :class="$style.send__button">SEND</div>
+              </div>
             </div>
             <div :class="$style.mail">
               <img :class="$style.mail__icon" src="@/icons/svg/contact_mail.svg" alt="Mail">
@@ -64,23 +76,21 @@
 
 <script>
 import { CATEGORY } from "@/constants/receipt.js"
-import IconBase from "@/components/IconBase"
-import ContactMail from '@/icons/vue/ContactMail.vue'
-import ContactPhone from '@/icons/vue/ContactPhone.vue'
-import ContactInstagram from '@/icons/vue/ContactInstagram.vue'
 
 export default {
   name: "Footer",
   components: {
-    IconBase,
-    ContactMail,
-    ContactPhone,
-    ContactInstagram
   },
   data() {
     return {
       categories: CATEGORY,
-      about: ["About Us", "FAQ", "Report Problem"]
+      about: ["About Us", "FAQ", "Report Problem"],
+      active: false
+    }
+  },
+  methods: {
+    mouseOver() {
+      this.active = !this.active
     }
   }
 }
@@ -119,7 +129,52 @@ export default {
           margin: 21px 0 33px 0;
         }
         .media {
-
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          align-items: center;
+          .mail {
+            &__icon {
+              &__default, &__hover {
+                left: 0;
+              }
+            }
+          }
+          .phone {
+            &__icon {
+              &__default, &__hover {
+                left: 40px;
+              }
+            }
+          }
+          .instagram {
+            &__icon {
+              &__default, &__hover {
+                left: 80px
+              }
+            }
+          }
+          .mail, .phone, .instagram {
+            position: relative;
+            img {
+              height: 20px;
+              padding: 10px;
+              position: absolute;
+            }
+            &__icon {
+              &__default {
+                z-index: 5;
+                background: #F9FFF7;
+                &:hover {
+                  display: none;
+                }
+              }
+              &__hover {
+                background: #8BAC3E;
+                border-radius: 24px;
+              }
+            }
+          }
         }
       }
       .categories, .about {
@@ -153,7 +208,36 @@ export default {
             margin: 0;
           }
           .get__discount {
-
+            margin: 25px 0;
+            .input {
+              display: flex;
+              flex-direction: row;
+              &__form {
+                max-width: 250px;
+                height: 40px;
+                border: 1px solid #000000;
+                box-sizing: border-box;
+                border-radius: 8px 0 0 8px;
+                border-right: none;
+                font-family: "Rubik";
+                font-weight: normal;
+                font-size: 14px;
+                color: #000000;
+                padding: 10px;
+                cursor: pointer;
+                background: #F9FFF7;
+              }
+              .send__button {
+                font-weight: 500;
+                font-size: 14px;
+                color: #FFFFFF;
+                background: #8BAC3E;
+                border-radius: 0px 8px 8px 0px;
+                padding: 10px;
+                cursor: pointer;
+              }
+              
+            }
           }
           .mail {
             margin-bottom: 10px;
@@ -191,26 +275,32 @@ export default {
     .footer__content {
       margin: 0 0 100px 0;
       .upper__content {
+        flex-direction: column;
         padding: 50px;
         .first {
           margin-right: 20px;
           .address {
             font-size: 12px;
           }
-          .media {
-
-          }
+        }
+        .categories {
+          margin-top: 50px;
         }
         .categories, .about {
           margin-right: 20px;
+          width: 100%;
         }
         .categories, .about, .newsletter {
           &__title {
             font-size: 16px;
+            margin-bottom: 15px;
           }
           &__content {
             &:not(:last-child) {
-              margin-bottom: 15px;
+              margin-bottom: 10px;
+            }
+            &:last-child {
+              margin-bottom: 20px;
             }
             p, .discount {
               font-size: 12px;
