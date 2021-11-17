@@ -14,7 +14,7 @@ Vue.Js Frontend Engineer (Junior) - Test
 2. Login heroku pada komputer
 3. Mengetikkan "git init" lalu "heroku git:remote -a elemestest2"
 4. Menambahkan script server.js berisikan:
-*const express = require('express')
+```const express = require('express')
 const serveStatic = require('serve-static')
 const path = require('path')
 
@@ -30,13 +30,13 @@ app.get(/.*/, function (req, res) {
 
 const port = process.env.PORT || 8080
 app.listen(port)
-console.log(`app is listening on port: ${port}`)*
+console.log(`app is listening on port: ${port}`)```
 5. Lalu add, commit, dan push
 6. Terakhir "git push heroku main"
 7. Aplikasi sudah bisa terbuka pada website https://elemestest2.herokuapp.com
 
 
-### Soal 2
+# Soal 2
 ## Beri saran/masukan untuk perbaikan website elemes.id
 Saran dari saya sepertinya hanya pada desain, lebih eye catching dan jelas perbedaan antar fitur dalam satu halaman, karena yang sekarang masih terlalu sama jadi benar benar harus dilihat secara teliti jika tidak ingin terlewat
 
